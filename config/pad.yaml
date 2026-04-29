@@ -1,0 +1,73 @@
+die:
+  width: 2000
+  height: 2000
+
+placement_method: even
+
+sides:
+  north:
+    - name: U_N_IN0
+      cell: in_c
+    - name: U_N_IO0
+      cell: bi_t
+    - name: U_N_IO1
+      cell: bi_t
+    - name: U_N_IO2
+      cell: bi_t
+    - name: U_N_IO3
+      cell: bi_t
+    - name: U_N_IO4
+      cell: bi_t
+  south:
+    - name: U_S_IN0
+      cell: in_s
+    - name: U_S_IN1
+      cell: in_s
+    - name: U_S_IN2
+      cell: in_s
+    - name: U_S_IN3
+      cell: in_s
+    - name: U_S_IN4
+      cell: in_s
+  east:
+    - name: U_E_PWR
+      cell: dvdd
+    - name: U_E_IN0
+      cell: in_s
+    - name: U_E_IN1
+      cell: in_s
+    - name: U_E_IN2
+      cell: in_s
+    - name: U_E_IN3
+      cell: in_s
+    - name: U_E_IN4
+      cell: in_s
+    - name: U_E_IN5
+      cell: in_s
+  west:
+    - name: U_W_GND
+      cell: dvss
+    - name: U_W_IN0
+      cell: in_s
+    - name: U_W_IN1
+      cell: in_s
+    - name: U_W_IN2
+      cell: in_s
+    - name: U_W_IN3
+      cell: in_s
+    - name: U_W_IN4
+      cell: in_s
+    - name: U_W_IN5
+      cell: in_s
+
+corners:
+  nw: cor
+  ne: cor
+  se: cor
+  sw: cor
+
+filler_cells:
+  - fill10
+  - fill5
+  - fill1
+  - fillnc

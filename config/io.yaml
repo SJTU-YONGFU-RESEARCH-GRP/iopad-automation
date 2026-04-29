@@ -1,0 +1,91 @@
+source: tools/globalfoundries-pdk-libs-gf180mcu_fd_io/cells
+default_metal_stack: 3lm
+available_metal_stacks: [3lm, 4lm, 5lm]
+units:
+  dimensions: um
+  area: um^2
+cells:
+  asig_5p0:
+    width: 75.0
+    height: 350.0
+    area: 26250.0
+    pin_count: 5
+    pins: [ASIG5V, DVDD, DVSS, VDD, VSS]
+  bi_24t:
+    width: 75.0
+    height: 350.0
+    area: 26250.0
+    pin_count: 13
+    pins: [PAD, A, CS, IE, OE, PD, PU, SL, Y, DVDD, DVSS, VDD, VSS]
+  bi_t:
+    width: 75.0
+    height: 350.0
+    area: 26250.0
+    pin_count: 15
+    pins: [PAD, A, CS, IE, OE, PD, PDRV0, PDRV1, PU, SL, Y, DVDD, DVSS, VDD, VSS]
+  brk2:
+    width: 2.0
+    height: 350.0
+    area: 700.0
+    pin_count: 1
+    pins: [VSS]
+  brk5:
+    width: 5.0
+    height: 350.0
+    area: 1750.0
+    pin_count: 1
+    pins: [VSS]
+  cor:
+    width: 355.0
+    height: 355.0
+    area: 126025.0
+    pin_count: 4
+    pins: [DVDD, DVSS, VDD, VSS]
+  dvdd:
+    width: 75.0
+    height: 350.0
+    area: 26250.0
+    pin_count: 3
+    pins: [DVDD, DVSS, VSS]
+  dvss:
+    width: 75.0
+    height: 350.0
+    area: 26250.0
+    pin_count: 3
+    pins: [DVSS, DVDD, VDD]
+  fill1:
+    width: 1.0
+    height: 350.0
+    area: 350.0
+    pin_count: 4
+    pins: [DVDD, DVSS, VDD, VSS]
+  fill10:
+    width: 10.0
+    height: 350.0
+    area: 3500.0
+    pin_count: 4
+    pins: [DVDD, DVSS, VDD, VSS]
+  fill5:
+    width: 5.0
+    height: 350.0
+    area: 1750.0
+    pin_count: 4
+    pins: [DVDD, DVSS, VDD, VSS]
+  fillnc:
+    width: 0.1
+    height: 350.0
+    area: 35.0
+    pin_count: 4
+    pins: [DVDD, DVSS, VDD, VSS]
+  in_c:
+    width: 75.0
+    height: 350.0
+    area: 26250.0
+    pin_count: 8
+    pins: [PAD, PD, PU, Y, DVDD, DVSS, VDD, VSS]
+  in_s:
+    width: 75.0
+    height: 350.0
+    area: 26250.0
+    pin_count: 8
+    pins: [PAD, PD, PU, Y, DVDD, DVSS, VDD, VSS]
