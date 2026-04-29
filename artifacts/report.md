@@ -522,3 +522,52 @@
 | east_filler_106 | fill1 | filler | east | 1650.000000 | 1642.000000 | 350.000000 | 1.000000 | R90 |
 | east_filler_107 | fill1 | filler | east | 1650.000000 | 1643.000000 | 350.000000 | 1.000000 | R90 |
 | east_filler_108 | fill1 | filler | east | 1650.000000 | 1644.000000 | 350.000000 | 1.000000 | R90 |
+## Effective Signoff Config
+
+| Item | Value |
+|---|---|
+| LVS runset | `/home/yongfu/proj/iopad-automation/tools/globalfoundries-pdk-libs-gf180mcu_fd_pr/rules/klayout/lvs/gf180mcu.lvs` |
+| LVS log | `/home/yongfu/proj/iopad-automation/artifacts/lvs_check.log` |
+| LVS substrate | `gf180mcu_gnd` |
+| LVS stack | `3lm` |
+| LVS metal_top | `30K` |
+| LVS metal_level | `3LM` |
+| LVS mim_option | `A` |
+| LVS poly_res | `1K` |
+| LVS mim_cap | `2` |
+| DRC enabled (effective) | `true` |
+| DRC runset | `/home/yongfu/proj/iopad-automation/tools/globalfoundries-pdk-libs-gf180mcu_fd_pr/rules/klayout/drc/gf180mcu.drc` |
+| DRC log | `/home/yongfu/proj/iopad-automation/artifacts/drc_check.log` |
+| DRC run_mode | `flat` |
+| DRC feol | `true` |
+| DRC beol | `true` |
+| DRC offgrid | `true` |
+| DRC conn_drc | `false` |
+| DRC density | `false` |
+| DRC antenna | `false` |
+| DRC stack | `3lm` |
+| DRC metal_top | `30K` |
+| DRC metal_level | `3LM` |
+| DRC mim_option | `A` |
+
+## Signoff Verdict
+
+| Check | Verdict |
+|---|---|
+| DRC clean | `not-clean (3010 violations)` |
+| LVS clean | `not-clean (extraction errors)` |
+
+## Signoff Artifacts
+
+| Item | Status | Path |
+|---|---|---|
+| GDS | generated | `/home/yongfu/proj/iopad-automation/artifacts/pad_ring.gds` |
+| Netlist (extracted) | generated | `/home/yongfu/proj/iopad-automation/artifacts/pad_ring_extracted.cir` |
+| LVS report DB | failed | `/home/yongfu/proj/iopad-automation/artifacts/pad_ring.lvsdb` |
+| DRC report DB | present | `/home/yongfu/proj/iopad-automation/artifacts/pad_ring_drc.lyrdb` |
+
+### Notes
+
+- DRC execution is controlled by `--drc-check/--no-drc-check` (or `--drc/--no-drc`) and `signoff.drc.enabled` in `io.yaml`.
+- LVS check in this flow is the layout extraction stage (`--lvs-check/--no-lvs-check` or `--netlist/--no-netlist`).
+

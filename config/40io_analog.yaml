@@ -1,0 +1,103 @@
+die:
+  width: 2000
+  height: 2000
+
+placement_method: even
+
+sides:
+  north:
+    - name: U_N_A1
+      cell: asig_5p0
+    - name: U_N_A2
+      cell: asig_5p0
+    - name: U_N_A3
+      cell: asig_5p0
+    - name: U_N_A4
+      cell: asig_5p0
+    - name: U_N_VDD
+      cell: dvdd
+    - name: U_N_VSS
+      cell: dvss
+    - name: U_N_B1
+      cell: asig_5p0
+    - name: U_N_B2
+      cell: asig_5p0
+    - name: U_N_B3
+      cell: asig_5p0
+    - name: U_N_B4
+      cell: asig_5p0
+  south:
+    - name: U_S_A1
+      cell: asig_5p0
+    - name: U_S_A2
+      cell: asig_5p0
+    - name: U_S_A3
+      cell: asig_5p0
+    - name: U_S_A4
+      cell: asig_5p0
+    - name: U_S_VDD
+      cell: dvdd
+    - name: U_S_VSS
+      cell: dvss
+    - name: U_S_B1
+      cell: asig_5p0
+    - name: U_S_B2
+      cell: asig_5p0
+    - name: U_S_B3
+      cell: asig_5p0
+    - name: U_S_B4
+      cell: asig_5p0
+  east:
+    - name: U_E_A1
+      cell: asig_5p0
+    - name: U_E_A2
+      cell: asig_5p0
+    - name: U_E_A3
+      cell: asig_5p0
+    - name: U_E_A4
+      cell: asig_5p0
+    - name: U_E_VDD
+      cell: dvdd
+    - name: U_E_VSS
+      cell: dvss
+    - name: U_E_B1
+      cell: asig_5p0
+    - name: U_E_B2
+      cell: asig_5p0
+    - name: U_E_B3
+      cell: asig_5p0
+    - name: U_E_B4
+      cell: asig_5p0
+  west:
+    - name: U_W_A1
+      cell: asig_5p0
+    - name: U_W_A2
+      cell: asig_5p0
+    - name: U_W_A3
+      cell: asig_5p0
+    - name: U_W_A4
+      cell: asig_5p0
+    - name: U_W_VDD
+      cell: dvdd
+    - name: U_W_VSS
+      cell: dvss
+    - name: U_W_B1
+      cell: asig_5p0
+    - name: U_W_B2
+      cell: asig_5p0
+    - name: U_W_B3
+      cell: asig_5p0
+    - name: U_W_B4
+      cell: asig_5p0
+
+corners:
+  nw: cor
+  ne: cor
+  se: cor
+  sw: cor
+
+filler_cells:
+  - fill10
+  - fill5
+  - fill1
+  - fillnc

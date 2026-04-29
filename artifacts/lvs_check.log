@@ -1,37 +1,170 @@
-2026-04-29 20:08:11 +0800: Memory Usage (572048K) : Starting running GF180MCU Klayout LVS runset on /home/yongfu/proj/iopad-automation/artifacts/pad_ring.gds
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : Layout file: /home/yongfu/proj/iopad-automation/artifacts/pad_ring.gds
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : Number of threads: 40
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : Final report: /home/yongfu/proj/iopad-automation/artifacts/pad_ring.lvsdb
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : Substrate name: gf180mcu_gnd
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : Extracted netlist with net names: true
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : Extracted netlist with comments in details: false
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : Extracted netlist file: /home/yongfu/proj/iopad-automation/artifacts/pad_ring_extracted.cir
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : device_scaling: false
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : Verbose mode: false
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : deep  mode is enabled.
+2026-04-29 20:37:19 +0800: Memory Usage (572040K) : Starting running GF180MCU Klayout LVS runset on /home/yongfu/proj/iopad-automation/artifacts/pad_ring.gds
+2026-04-29 20:37:19 +0800: Memory Usage (573924K) : Layout file: /home/yongfu/proj/iopad-automation/artifacts/pad_ring.gds
+2026-04-29 20:37:19 +0800: Memory Usage (573924K) : Number of threads: 40
+2026-04-29 20:37:19 +0800: Memory Usage (573924K) : Final report: /home/yongfu/proj/iopad-automation/artifacts/pad_ring.lvsdb
+2026-04-29 20:37:20 +0800: Memory Usage (573924K) : Substrate name: gf180mcu_gnd
+2026-04-29 20:37:20 +0800: Memory Usage (573924K) : Extracted netlist with net names: true
+2026-04-29 20:37:20 +0800: Memory Usage (573924K) : Extracted netlist with comments in details: false
+2026-04-29 20:37:20 +0800: Memory Usage (573924K) : Extracted netlist file: /home/yongfu/proj/iopad-automation/artifacts/pad_ring_extracted.cir
+2026-04-29 20:37:20 +0800: Memory Usage (573924K) : device_scaling: false
+2026-04-29 20:37:20 +0800: Memory Usage (573924K) : Verbose mode: false
+2026-04-29 20:37:20 +0800: Memory Usage (573924K) : deep  mode is enabled.
 No schematic loaded , please add your netlist file
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : No schematic loaded , please add your netlist file
-2026-04-29 20:08:11 +0800: Memory Usage (573920K) : Read in polygons from layers.
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : Read in labels from layers.
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : Evaluate switches start.
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : METAL_TOP Selected is 30K
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : METAL_STACK Selected is 3LM
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : POLY_RES Selected is 1K
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : MIM Option selected A
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : SCH_SIMPLE enabled  false
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : NET_ONLY enabled  false
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : TOP_LVL_PINS enabled  false
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : COMBINE enabled  false
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : PURGE enabled  false
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : PURGE_NETS enabled  false
-2026-04-29 20:08:11 +0800: Memory Usage (580320K) : SIMPLIFY enabled  true
-2026-04-29 20:08:12 +0800: Memory Usage (580320K) : Evaluate switches end.
-2026-04-29 20:08:12 +0800: Memory Usage (580320K) : GF180 LVS rules started
-2026-04-29 20:08:12 +0800: Memory Usage (580320K) : Starting deriving base layers.
-2026-04-29 20:08:12 +0800: Memory Usage (5855984K) : Starting MOSFET DERIVATIONS
-2026-04-29 20:08:12 +0800: Memory Usage (5855984K) : Starting PMOS layers DERIVATIONS
-2026-04-29 20:08:12 +0800: Memory Usage (5856924K) : Starting NMOS layers DERIVATIONS
-2026-04-29 20:08:13 +0800: Memory Usage (5857364K) : Starting BJT DERIVATIONS
-2026-04-29 20:08:13 +0800: Memory Usage (5857364K) : Starting vnpn layers DERIVATIONS
-2026-04-29 20:08:13 +0800: Memory Usage (5863056K) : Starting vpnp layers DERIVATIONS
-2026-04-29 20:08:13 +0800: Memory Usage (5863348K) : Starting DIODE DERIVATIONS
+2026-04-29 20:37:20 +0800: Memory Usage (573924K) : No schematic loaded , please add your netlist file
+2026-04-29 20:37:20 +0800: Memory Usage (573924K) : Read in polygons from layers.
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : Read in labels from layers.
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : Evaluate switches start.
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : METAL_TOP Selected is 30K
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : METAL_STACK Selected is 3LM
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : POLY_RES Selected is 1K
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : MIM Option selected A
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : SCH_SIMPLE enabled  false
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : NET_ONLY enabled  false
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : TOP_LVL_PINS enabled  false
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : COMBINE enabled  false
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : PURGE enabled  false
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : PURGE_NETS enabled  false
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : SIMPLIFY enabled  true
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : Evaluate switches end.
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : GF180 LVS rules started
+2026-04-29 20:37:20 +0800: Memory Usage (579368K) : Starting deriving base layers.
+2026-04-29 20:37:21 +0800: Memory Usage (5855032K) : Starting MOSFET DERIVATIONS
+2026-04-29 20:37:21 +0800: Memory Usage (5855032K) : Starting PMOS layers DERIVATIONS
+2026-04-29 20:37:21 +0800: Memory Usage (5855656K) : Starting NMOS layers DERIVATIONS
+2026-04-29 20:37:21 +0800: Memory Usage (5858768K) : Starting BJT DERIVATIONS
+2026-04-29 20:37:21 +0800: Memory Usage (5858768K) : Starting vnpn layers DERIVATIONS
+2026-04-29 20:37:21 +0800: Memory Usage (5864464K) : Starting vpnp layers DERIVATIONS
+2026-04-29 20:37:21 +0800: Memory Usage (5864656K) : Starting DIODE DERIVATIONS
+2026-04-29 20:37:22 +0800: Memory Usage (5864656K) : Starting RESISTOR DERIVATIONS
+2026-04-29 20:37:24 +0800: Memory Usage (5864656K) : Starting MIMCAP DERIVATIONS
+2026-04-29 20:37:24 +0800: Memory Usage (5864656K) : Starting MOSCAP DERIVATIONS
+2026-04-29 20:37:24 +0800: Memory Usage (5864656K) : Starting MOS SAB DERIVATIONS
+2026-04-29 20:37:24 +0800: Memory Usage (5864656K) : Starting PMOS SAB DERIVATIONS
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting NMOS SAB DERIVATIONS
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting NMOS EFUSE DERIVATIONS
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting GF180 LVS connectivity setup
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting GF180 LVS connectivity setup (Inter-layer)
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting GF180 LVS connectivity setup (Attaching labels)
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting GF180 LVS connectivity setup (Global)
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting GF180 LVS connectivity setup (Multifinger Devices)
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting LVS MOSFET CONNECTIONS
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting LVS BJT CONNECTIONS
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting LVS DIODE CONNECTIONS
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting LVS RESISTOR CONNECTIONS
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting LVS MIMCAP CONNECTIONS
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting LVS EFUSE CONNECTIONS
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting GF180 LVS DEVICES EXTRACTION
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting MOSFET EXTRACTION
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting PMOS EXTRACTION
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting 3.3V PMOS transistor outside DNWEL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting 5V PMOS transistor outside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting 6V PMOS transistor outside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting 3.3V PMOS transistor inside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting 5V PMOS transistor inside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting 6V PMOS transistor inside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting LDPMOS transistor
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting NMOS EXTRACTION
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : 3.3V NMOS transistor outside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : 5V NMOS transistor outside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : 6V NMOS transistor outside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : 3.3V NMOS transistor inside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : 5V NMOS transistor inside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : 6V NMOS transistor inside DNWELL
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Native Vt NMOS transistor
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting LDNMOS transistor
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting BJT EXTRACTION
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting vnpn BJT EXTRACTION
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting vnpn_10x10 BJT
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting vnpn_5x5 BJT
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting vnpn_0p54x16 BJT
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting vnpn_0p54x8 BJT
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting vnpn_0p54x4 BJT
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting vnpn_0p54x2 BJT
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting vpnp BJT EXTRACTION
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting vpnp_10x10 BJT
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting vpnp_5x5 BJT
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting vpnp_0p42x10 BJT
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting vpnp_0p42x5 BJT
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Starting DIODE EXTRACTION
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting np_3p3 diode
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting np_3p3_dw diode
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting np_6p0 diode
+2026-04-29 20:37:25 +0800: Memory Usage (5864656K) : Extracting np_6p0_dw diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting pn_3p3 diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extractingpn_3p3_dw diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting pn_6p0 diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting pn_6p0_dw diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting nwp_3p3 diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting nwp_6p0 diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting dnwpw_3p3 diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting dnwpw_6p0 diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting dnwps_3p3 diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting dnwps_6p0 diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting sc_diode diode
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Starting RESISTOR EXTRACTION
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting NPLUS_U device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting NPLUS_U_DW device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting PPLUS_U device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting PPLUS_U_DW device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting NPLUS_S device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting NPLUS_S_DW device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting PPLUS_S device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting PPLUS_S_DW device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting NWELL device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting PWELL device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting RM1 device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting RM2 device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting RM3 device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting TM30K device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Starting MIMCAP EXTRACTION
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting mim_single_2p0fF device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Starting MOSCAP EXTRACTION
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting nmoscap_3p3 device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting nmoscap_3p3_dw device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting pmoscap_3p3 device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting pmoscap_3p3_dw device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting nmoscap_6p0 device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting nmoscap_6p0_dw device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting pmoscap_6p0 device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting pmoscap_6p0 device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting pmoscap_3p3_b device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting nmoscap_6p0_b device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting pmoscap_6p0_b device
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Starting MOS SAB EXTRACTION
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Starting PMOS SAB EXTRACTION
+2026-04-29 20:37:26 +0800: Memory Usage (5864656K) : Extracting 3.3V ESD PMOS transistor outside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 5V ESD PMOS transistor outside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 6V ESD PMOS transistor outside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 3.3V ESD PMOS transistor inside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 5V ESD PMOS transistor inside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 6V ESD PMOS transistor inside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Starting NMOS SAB EXTRACTION
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 3.3V ESD NMOS transistor outside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 5V ESD NMOS transistor outside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 6V ESD NMOS transistor outside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 3.3V ESD NMOS transistor inside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 5V ESD NMOS transistor inside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Extracting 6V ESD NMOS transistor inside DNWELL device
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Starting EFUSE EXTRACTION
+ERROR: In /home/yongfu/proj/iopad-automation/tools/globalfoundries-pdk-libs-gf180mcu_fd_pr/rules/klayout/lvs/gf180mcu.lvs: 'netlist': Errors encountered during netlist extraction:
+[must-connect] In cell 3LM_METAL_RAIL_PAD_60: Must-connect nets DVDD of circuit 3LM_METAL_RAIL are not connected, shape: (-0.16,65.325;-0.16,350;75.16,350;75.16,65.325)
+[must-connect] In cell 3LM_METAL_RAIL_PAD_60: Must-connect nets DVSS of circuit 3LM_METAL_RAIL are not connected, shape: (-0.16,65.325;-0.16,350;75.16,350;75.16,65.325)
+[must-connect] In cell 3LM_METAL_RAIL_PAD_60: Must-connect nets VDD of circuit 3LM_METAL_RAIL are not connected, shape: (-0.16,65.325;-0.16,350;75.16,350;75.16,65.325)
+[must-connect] In cell 3LM_METAL_RAIL_PAD_60: Must-connect nets VSS of circuit 3LM_METAL_RAIL are not connected, shape: (-0.16,65.325;-0.16,350;75.16,350;75.16,65.325)
+[must-connect] In cell ESD_CLAMP_COR: Must-connect nets DVDD of circuit top_routing_cor are not connected, shape: (9.805,283.255;9.805,283.6;277.68,283.6;277.68,283.255)
+[must-connect] In cell ESD_CLAMP_COR: Must-connect nets DVSS of circuit top_routing_cor are not connected, shape: (9.805,283.255;9.805,283.6;277.68,283.6;277.68,283.255)
+[must-connect] In cell ESD_CLAMP_COR: Must-connect nets VDD of circuit top_routing_cor are not connected, shape: (9.805,283.255;9.805,283.6;277.68,283.6;277.68,283.255)
+[must-connect] In cell ESD_CLAMP_COR: Must-connect nets VSS of circuit top_routing_cor are not connected, shape: (9.805,283.255;9.805,283.6;277.68,283.6;277.68,283.255) in LayoutToNetlist::check_extraction_errors
+ERROR: RuntimeError: 'netlist': Errors encountered during netlist extraction:
+[must-connect] In cell 3LM_METAL_RAIL_PAD_60: Must-connect nets DVDD of circuit 3LM_METAL_RAIL are not connected, shape: (-0.16,65.325;-0.16,350;75.16,350;75.16,65.325)
+[must-connect] In cell 3LM_METAL_RAIL_PAD_60: Must-connect nets DVSS of circuit 3LM_METAL_RAIL are not connected, shape: (-0.16,65.325;-0.16,350;75.16,350;75.16,65.325)
+[must-connect] In cell 3LM_METAL_RAIL_PAD_60: Must-connect nets VDD of circuit 3LM_METAL_RAIL are not connected, shape: (-0.16,65.325;-0.16,350;75.16,350;75.16,65.325)
+[must-connect] In cell 3LM_METAL_RAIL_PAD_60: Must-connect nets VSS of circuit 3LM_METAL_RAIL are not connected, shape: (-0.16,65.325;-0.16,350;75.16,350;75.16,65.325)
+[must-connect] In cell ESD_CLAMP_COR: Must-connect nets DVDD of circuit top_routing_cor are not connected, shape: (9.805,283.255;9.805,283.6;277.68,283.6;277.68,283.255)
+[must-connect] In cell ESD_CLAMP_COR: Must-connect nets DVSS of circuit top_routing_cor are not connected, shape: (9.805,283.255;9.805,283.6;277.68,283.6;277.68,283.255)
+[must-connect] In cell ESD_CLAMP_COR: Must-connect nets VDD of circuit top_routing_cor are not connected, shape: (9.805,283.255;9.805,283.6;277.68,283.6;277.68,283.255)
+[must-connect] In cell ESD_CLAMP_COR: Must-connect nets VSS of circuit top_routing_cor are not connected, shape: (9.805,283.255;9.805,283.6;277.68,283.6;277.68,283.255) in LayoutToNetlist::check_extraction_errors in Executable::execute
+  /home/yongfu/proj/iopad-automation/tools/globalfoundries-pdk-libs-gf180mcu_fd_pr/rules/klayout/lvs/gf180mcu.lvs:1865:in `execute'
+  :/built-in-macros/lvs_interpreters.lym:31:in `instance_eval'
+  :/built-in-macros/lvs_interpreters.lym:31:in `execute'
+2026-04-29 20:37:27 +0800: Memory Usage (5864656K) : Starting GF180 LVS comparison section
