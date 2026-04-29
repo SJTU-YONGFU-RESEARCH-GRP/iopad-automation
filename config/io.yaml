@@ -4,6 +4,53 @@ available_metal_stacks: [3lm, 4lm, 5lm]
 units:
   dimensions: um
   area: um^2
+signoff:
+  lvs:
+    runset: tools/globalfoundries-pdk-libs-gf180mcu_fd_pr/rules/klayout/lvs/gf180mcu.lvs
+    substrate_name: gf180mcu_gnd
+    by_metal_stack:
+      3lm:
+        metal_top: 30K
+        metal_level: 3LM
+        mim_option: A
+        poly_res: 1K
+        mim_cap: 2
+      4lm:
+        metal_top: 11K
+        metal_level: 4LM
+        mim_option: B
+        poly_res: 1K
+        mim_cap: 2
+      5lm:
+        metal_top: 9K
+        metal_level: 5LM
+        mim_option: B
+        poly_res: 1K
+        mim_cap: 2
+  drc:
+    enabled: false
+    runset: tools/globalfoundries-pdk-libs-gf180mcu_fd_pr/rules/klayout/drc/gf180mcu.drc
+    run_mode: flat
+    switches:
+      feol: true
+      beol: true
+      offgrid: true
+      conn_drc: false
+      density: false
+      antenna: false
+    by_metal_stack:
+      3lm:
+        metal_top: 30K
+        metal_level: 3LM
+        mim_option: A
+      4lm:
+        metal_top: 11K
+        metal_level: 4LM
+        mim_option: B
+      5lm:
+        metal_top: 9K
+        metal_level: 5LM
+        mim_option: B
 cells:
   asig_5p0:
     width: 75.0
