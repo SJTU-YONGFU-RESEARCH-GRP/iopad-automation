@@ -8,7 +8,7 @@ ROOT_DIR="$(cd "${DIR}/.." && pwd)"
 
 export VENV_DIR="${VENV_DIR:-demo/.venv}"
 export REQUIREMENTS_OUT="${REQUIREMENTS_OUT:-requirements.txt}"
-export INSTALL_GDSTK="${INSTALL_GDSTK:-0}"
+export INSTALL_GDSTK="${INSTALL_GDSTK:-1}"
 export RECREATE="${RECREATE:-0}"
 export PYTHON_BIN="${PYTHON_BIN:-python3}"
 
