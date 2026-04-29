@@ -16,7 +16,7 @@ def test_make_fillers_closes_gap_exactly() -> None:
         "fill1": CellSize(width=1.0, height=350.0),
     }
 
-    placements = make_fillers(
+    placements, _filler_count = make_fillers(
         side="south",
         start=0.0,
         fixed_coord=0.0,

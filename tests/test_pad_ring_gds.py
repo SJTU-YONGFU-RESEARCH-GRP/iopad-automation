@@ -62,6 +62,7 @@ def test_build_placements_from_yaml_with_small_ring() -> None:
         pad_yaml=pad_yaml,
         die_width_override=None,
         die_height_override=None,
+        placement_method="packed",
     )
 
     assert die_width == 2000.0
@@ -85,6 +86,7 @@ def test_build_placements_raises_on_missing_cells() -> None:
             pad_yaml=pad_yaml,
             die_width_override=None,
             die_height_override=None,
+            placement_method="packed",
         )
 
 
