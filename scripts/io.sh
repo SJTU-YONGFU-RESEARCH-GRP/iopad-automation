@@ -16,6 +16,8 @@ REPORT_MD_PATH="${REPORT_MD_PATH:-$OUT_DIR/report.md}"
 NETLIST_PATH="${NETLIST_PATH:-$OUT_DIR/pad_ring_extracted.cir}"
 LVS_REPORT_PATH="${LVS_REPORT_PATH:-$OUT_DIR/pad_ring.lvsdb}"
 DRC_REPORT_PATH="${DRC_REPORT_PATH:-$OUT_DIR/pad_ring_drc.lyrdb}"
+LVS_LOG_PATH="${LVS_LOG_PATH:-$OUT_DIR/lvs_check.log}"
+DRC_LOG_PATH="${DRC_LOG_PATH:-$OUT_DIR/drc_check.log}"
 TOP_CELL="${TOP_CELL:-PAD_RING_TOP}"
 
 STEP="both" # placement | gds | both (gds stage will also try netlist extraction)
@@ -51,10 +53,14 @@ Options:
   --die-width UM             Override die width (um).
   --die-height UM            Override die height (um).
 
-  --netlist                  Force netlist extraction (requires klayout). Default behavior: auto.
-  --no-netlist               Disable netlist extraction.
-  --drc                      Force DRC execution (requires klayout).
-  --no-drc                   Disable DRC execution.
+  --lvs-check                Force LVS-stage execution (requires klayout).
+  --no-lvs-check             Disable LVS-stage execution.
+  --netlist                  Alias of --lvs-check (backward compatible).
+  --no-netlist               Alias of --no-lvs-check.
+  --drc-check                Force DRC execution (requires klayout).
+  --no-drc-check             Disable DRC execution.
+  --drc                      Alias of --drc-check (backward compatible).
+  --no-drc                   Alias of --no-drc-check.
   --report-md PATH           Markdown report path. Default: $REPORT_MD_PATH.
   --netlist-path PATH        Output extracted netlist path. Default: $NETLIST_PATH.
   --lvs-report-path PATH     Output LVS report database path. Default: $LVS_REPORT_PATH.
@@ -96,16 +102,16 @@ while [[ $# -gt 0 ]]; do
     --placement-method)
       PLACEMENT_METHOD="${2:-}"; shift 2
       ;;
-    --netlist)
+    --lvs-check|--netlist)
       NETLIST_REQUEST="on"; shift 1
       ;;
-    --no-netlist)
+    --no-lvs-check|--no-netlist)
       NETLIST_REQUEST="off"; shift 1
       ;;
-    --drc)
+    --drc-check|--drc)
       DRC_REQUEST="on"; shift 1
       ;;
-    --no-drc)
+    --no-drc-check|--no-drc)
       DRC_REQUEST="off"; shift 1
       ;;
     --report-md)
@@ -286,6 +292,8 @@ fi
 NETLIST_STATUS="not-requested"
 LVS_STATUS="not-run"
 DRC_STATUS="not-run"
+LVS_VERDICT="not-run"
+DRC_VERDICT="not-run"
 if [[ "$DRC_REQUEST" == "off" ]]; then
   DRC_STATUS="disabled"
 fi
@@ -347,6 +355,7 @@ if [[ "$STEP" == "gds" || "$STEP" == "both" ]]; then
       echo "Warning: klayout not found; skipping netlist extraction (set --netlist to fail hard)." >&2
       NETLIST_STATUS="skipped-missing-klayout"
       LVS_STATUS="skipped-missing-klayout"
+      LVS_VERDICT="not-run"
     else
       # Resolve metal stack for LVS deck configuration.
       metal_stack_resolved="$METAL_STACK"
@@ -422,6 +431,7 @@ for key in ("metal_top", "metal_level", "mim_option", "poly_res", "mim_cap"):
       fi
 
       echo "Running KLayout netlist extraction (GF180MCU LVS deck)..."
+      set +e
       klayout -b -r "$GF180MCU_LVS_RULESET_PATH" \
         -rd input="$GDS_PATH" \
         -rd report="$LVS_REPORT_PATH" \
@@ -435,15 +445,27 @@ for key in ("metal_top", "metal_level", "mim_option", "poly_res", "mim_cap"):
         -rd mim_cap="$mim_cap" \
         -rd spice_net_names=true \
         -rd spice_comments=false \
-        -rd lvs_sub="$LVS_SUBSTRATE_NAME"
+        -rd lvs_sub="$LVS_SUBSTRATE_NAME" 2>&1 | tee "$LVS_LOG_PATH"
+      lvs_cmd_status=${PIPESTATUS[0]}
+      set -e
 
-      echo "Wrote extracted netlist: $NETLIST_PATH"
-      NETLIST_STATUS="generated"
-      LVS_STATUS="generated"
+      if [[ "$lvs_cmd_status" -eq 0 ]]; then
+        echo "Wrote extracted netlist: $NETLIST_PATH"
+        NETLIST_STATUS="generated"
+        LVS_STATUS="generated"
+        # Current flow runs extraction via LVS deck without schematic comparison.
+        LVS_VERDICT="checked (layout extraction stage)"
+      else
+        echo "Warning: LVS extraction stage reported errors. See: $LVS_LOG_PATH" >&2
+        NETLIST_STATUS="failed"
+        LVS_STATUS="failed"
+        LVS_VERDICT="not-clean (extraction errors)"
+      fi
     fi
   else
     NETLIST_STATUS="disabled"
     LVS_STATUS="disabled"
+    LVS_VERDICT="disabled"
   fi
 
   should_run_drc="false"
@@ -529,6 +551,7 @@ for key in ("metal_top", "metal_level", "mim_option"):
       fi
 
       echo "Running KLayout DRC (GF180MCU DRC deck)..."
+      set +e
       klayout -b -r "$DRC_RUNSET_PATH" \
         -rd input="$GDS_PATH" \
         -rd report="$DRC_REPORT_PATH" \
@@ -542,20 +565,75 @@ for key in ("metal_top", "metal_level", "mim_option"):
         -rd offgrid="$DRC_OFFGRID" \
         -rd conn_drc="$DRC_CONN_DRC" \
         -rd density="$DRC_DENSITY" \
-        -rd antenna="$DRC_ANTENNA"
+        -rd antenna="$DRC_ANTENNA" 2>&1 | tee "$DRC_LOG_PATH"
+      drc_cmd_status=${PIPESTATUS[0]}
+      set -e
 
-      echo "Wrote DRC report DB: $DRC_REPORT_PATH"
-      DRC_STATUS="generated"
+      if [[ "$drc_cmd_status" -eq 0 ]]; then
+        echo "Wrote DRC report DB: $DRC_REPORT_PATH"
+        DRC_STATUS="generated"
+      else
+        echo "Warning: DRC run reported errors. See: $DRC_LOG_PATH" >&2
+        DRC_STATUS="failed"
+      fi
+      drc_violation_count="$(
+        "$PYTHON_BIN" -c 'import sys,xml.etree.ElementTree as ET
+path = sys.argv[1]
+try:
+    root = ET.parse(path).getroot()
+except Exception:
+    print("unknown")
+    raise SystemExit(0)
+if len(root) > 7:
+    print(len(root[7]))
+else:
+    print("unknown")' \
+          "$DRC_REPORT_PATH" 2>/dev/null || echo "unknown"
+      )"
+      if [[ "$drc_cmd_status" -ne 0 ]]; then
+        DRC_VERDICT="not-clean (run errors)"
+      elif [[ "$drc_violation_count" == "0" ]]; then
+        DRC_VERDICT="clean"
+      elif [[ "$drc_violation_count" == "unknown" ]]; then
+        DRC_VERDICT="unknown"
+      else
+        DRC_VERDICT="not-clean ($drc_violation_count violations)"
+      fi
     fi
   elif [[ "$DRC_REQUEST" == "off" ]]; then
     DRC_STATUS="disabled"
+    DRC_VERDICT="disabled"
   else
     DRC_STATUS="not-requested"
+    DRC_VERDICT="not-run"
   fi
 fi
 
 if [[ -f "$DRC_REPORT_PATH" ]]; then
   DRC_STATUS="present"
+  if [[ "$DRC_VERDICT" == "not-run" || "$DRC_VERDICT" == "unknown" ]]; then
+    drc_violation_count="$(
+      "$PYTHON_BIN" -c 'import sys,xml.etree.ElementTree as ET
+path = sys.argv[1]
+try:
+    root = ET.parse(path).getroot()
+except Exception:
+    print("unknown")
+    raise SystemExit(0)
+if len(root) > 7:
+    print(len(root[7]))
+else:
+    print("unknown")' \
+        "$DRC_REPORT_PATH" 2>/dev/null || echo "unknown"
+    )"
+    if [[ "$drc_violation_count" == "0" ]]; then
+      DRC_VERDICT="clean"
+    elif [[ "$drc_violation_count" == "unknown" ]]; then
+      DRC_VERDICT="unknown"
+    else
+      DRC_VERDICT="not-clean ($drc_violation_count violations)"
+    fi
+  fi
 fi
 
 if [[ "$STEP" == "gds" || "$STEP" == "both" ]]; then
@@ -572,6 +650,7 @@ if [[ "$STEP" == "gds" || "$STEP" == "both" ]]; then
     echo "| Item | Value |"
     echo "|---|---|"
     echo "| LVS runset | \`$GF180MCU_LVS_RULESET_PATH\` |"
+    echo "| LVS log | \`$LVS_LOG_PATH\` |"
     echo "| LVS substrate | \`$LVS_SUBSTRATE_NAME\` |"
     echo "| LVS stack | \`${LVS_EFFECTIVE_STACK:-n/a}\` |"
     echo "| LVS metal_top | \`${LVS_EFFECTIVE_METAL_TOP:-n/a}\` |"
@@ -581,6 +660,7 @@ if [[ "$STEP" == "gds" || "$STEP" == "both" ]]; then
     echo "| LVS mim_cap | \`${LVS_EFFECTIVE_MIM_CAP:-n/a}\` |"
     echo "| DRC enabled (effective) | \`$should_run_drc_effective\` |"
     echo "| DRC runset | \`$DRC_RUNSET_PATH\` |"
+    echo "| DRC log | \`$DRC_LOG_PATH\` |"
     echo "| DRC run_mode | \`$DRC_RUN_MODE\` |"
     echo "| DRC feol | \`$DRC_FEOL\` |"
     echo "| DRC beol | \`$DRC_BEOL\` |"
@@ -593,6 +673,13 @@ if [[ "$STEP" == "gds" || "$STEP" == "both" ]]; then
     echo "| DRC metal_level | \`${DRC_EFFECTIVE_METAL_LEVEL:-n/a}\` |"
     echo "| DRC mim_option | \`${DRC_EFFECTIVE_MIM_OPTION:-n/a}\` |"
     echo ""
+    echo "## Signoff Verdict"
+    echo ""
+    echo "| Check | Verdict |"
+    echo "|---|---|"
+    echo "| DRC clean | \`$DRC_VERDICT\` |"
+    echo "| LVS clean | \`$LVS_VERDICT\` |"
+    echo ""
     echo "## Signoff Artifacts"
     echo ""
     echo "| Item | Status | Path |"
@@ -604,8 +691,8 @@ if [[ "$STEP" == "gds" || "$STEP" == "both" ]]; then
     echo ""
     echo "### Notes"
     echo ""
-    echo "- DRC execution is controlled by \`--drc/--no-drc\` or \`signoff.drc.enabled\` in \`io.yaml\`."
-    echo "- LVS row reflects the KLayout extraction step used for netlist generation."
+    echo "- DRC execution is controlled by \`--drc-check/--no-drc-check\` (or \`--drc/--no-drc\`) and \`signoff.drc.enabled\` in \`io.yaml\`."
+    echo "- LVS check in this flow is the layout extraction stage (\`--lvs-check/--no-lvs-check\` or \`--netlist/--no-netlist\`)."
     echo ""
   } >> "$REPORT_MD_PATH"
   echo "Updated report with signoff artifacts: $REPORT_MD_PATH"
