@@ -1,3 +1,6 @@
 [submodule "tools/globalfoundries-pdk-libs-gf180mcu_fd_io"]
 	path = tools/globalfoundries-pdk-libs-gf180mcu_fd_io
 	url = git@github.com:SJTU-YONGFU-RESEARCH-GRP/globalfoundries-pdk-libs-gf180mcu_fd_io.git
+[submodule "tools/globalfoundries-pdk-libs-gf180mcu_fd_pr"]
+	path = tools/globalfoundries-pdk-libs-gf180mcu_fd_pr
+	url = git@github.com:google/globalfoundries-pdk-libs-gf180mcu_fd_pr.git

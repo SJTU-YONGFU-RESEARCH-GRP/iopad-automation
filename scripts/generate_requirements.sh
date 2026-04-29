@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-VENV_DIR="${VENV_DIR:-demo/.venv}"
+VENV_DIR="${VENV_DIR:-venv}"
 REQUIREMENTS_OUT="${REQUIREMENTS_OUT:-requirements.txt}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 EXCLUDE_PACKAGING_TOOLS="${EXCLUDE_PACKAGING_TOOLS:-1}"
